@@ -84,19 +84,25 @@ async function create() {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-music";
                 stdown.appendChild(i);
-                p.textContent = data.type +" "+ data.name;
+                const content = data.type +" "+ data.name;
+                const new_content = content.length > 30 ? content.slice(0, 30) + "..." : content;
+                p.textContent = new_content;
             }
             if (data.type == "Playing") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-gamepad";
                 stdown.appendChild(i);
-                p.textContent = data.type +" "+ data.name;
+                const content = data.type +" "+ data.name;
+                const new_content = content.length > 30 ? content.slice(0, 30) + "..." : content;
+                p.textContent = new_content;
             }
             if (data.type == "Watching") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-film";
                 stdown.appendChild(i);
-                p.textContent = data.type +" "+ data.name;
+                const content = data.type +" "+ data.name;
+                const new_content = content.length > 30 ? content.slice(0, 30) + "..." : content;
+                p.textContent = new_content;
             }
             stdown.appendChild(p);
         }
