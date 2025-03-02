@@ -64,6 +64,10 @@ async function create() {
             stdown.appendChild(p);
         }
         if (data.return == "presence") {
+            if (data.image == null) {
+                const stpresence = document.querySelector(".stpresence");
+                stpresence.style.display = "none";
+            }
             if (data.image != null) {
                 const stpresence = document.querySelector(".stpresence");
                 const i = document.createElement("img");
