@@ -14,7 +14,8 @@ async function fetchPresence() {
         const response = await fetch("https://grabe.infiinitee.me/infinite");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
-        return data;
+        const decodedUrl = decodeURIComponent(data);
+        return decodedUrl;
     } catch (error) {
         console.error("Error fetching presence:", error);
     }
