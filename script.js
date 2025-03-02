@@ -42,8 +42,9 @@ async function create() {
     stleft.appendChild(img);   
 
     if (data.status == "Offline") {
-        const stdown = document.querySelector(".stdown");
+        const stdown = document.querySelector(".marquee-text");
         const p = document.createElement("p");
+        p.className = "marquee"
         p.textContent = "Offline";
         const stpresence = document.querySelector(".stpresence");
         stpresence.style.display = "none";
@@ -51,17 +52,23 @@ async function create() {
 
     }
     else {
+        const dow = document.querySelector(".stdown");
+        const mar = document.createElement("div")
+        mar.className = "marquee-text";
+        dow.appendChild(mar);
         if (data.return == "None") {
-            const stdown = document.querySelector(".stdown");
+            const stdown = document.querySelector(".marquee-text");
             const p = document.createElement("p");
+            p.className = "marquee"
             p.textContent = "...";
             const stpresence = document.querySelector(".stpresence");
             stpresence.style.display = "none";
             stdown.appendChild(p);
         }
         if (data.return == "status") {
-            const stdown = document.querySelector(".stdown");
+            const stdown = document.querySelector(".marquee-text");
             const p = document.createElement("p");
+            p.className = "marquee"
             p.textContent = data.name;
             const stpresence = document.querySelector(".stpresence");
             stpresence.style.display = "none";
@@ -80,33 +87,45 @@ async function create() {
             }
             const stdown = document.querySelector(".stdown");
             const p = document.createElement("p");
+            p.className = "marquee"
             if (data.type == "Listening to") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-music";
                 stdown.appendChild(i);
                 const content = data.type +" "+ data.name;
-                const new_content = content.length > 30 ? content.slice(0, 30) + "..." : content;
-                p.textContent = new_content;
+                p.textContent = content;
             }
             if (data.type == "Playing") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-gamepad";
                 stdown.appendChild(i);
                 const content = data.type +" "+ data.name;
-                const new_content = content.length > 30 ? content.slice(0, 30) + "..." : content;
-                p.textContent = new_content;
+                p.textContent = content;
             }
             if (data.type == "Watching") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-film";
                 stdown.appendChild(i);
                 const content = data.type +" "+ data.name;
-                const new_content = content.length > 30 ? content.slice(0, 30) + "..." : content;
-                p.textContent = new_content;
+                p.textContent = content;
             }
-            stdown.appendChild(p);
+            mar.appendChild(p);
+            stdown.appendChild(mar)
         }
     }
-}
+    const marqueeText = document.querySelector(".marquee");
+    const marqueeContainer = document.querySelector(".marquee-text");
 
+    if (!marqueeText || !marqueeContainer) return;
+
+    const containerWidth = marqueeContainer.offsetWidth;
+    const maxAllowedWidth = containerWidth
+
+    if ((marqueeText.scrollWidth - containerWidth) > maxAllowedWidth) {
+        marqueeText.style.animation = "marquee 10s linear infinite";
+    } else {
+        marqueeText.style.animation = "none";
+        marqueeText.style.paddingLeft = "0px"
+    }
+}
 create()
