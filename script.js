@@ -3,7 +3,8 @@ async function fixlink(link) {
     const match = discordLink.match(/\/https\/(.+)\.png/);
     if (match) {
         const extractedUrl = "https://" + match[1];
-        return extractedUrl;
+        const decodedUrl = decodeURIComponent(extractedUrl);
+        return decodedUrl;
     } else {
         console.error("Invalid URL format");
     }
@@ -14,8 +15,7 @@ async function fetchPresence() {
         const response = await fetch("https://grabe.infiinitee.me/infinite");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
-        const decodedUrl = decodeURIComponent(data);
-        return decodedUrl;
+        return data
     } catch (error) {
         console.error("Error fetching presence:", error);
     }
