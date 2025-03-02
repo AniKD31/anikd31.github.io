@@ -1,12 +1,15 @@
 async function fixlink(link) {
-    const discordLink = link;
-    const match = discordLink.match(/\/https\/(.+)\.png/);
-    if (match) {
-        const extractedUrl = "https://" + match[1];
-        const decodedUrl = decodeURIComponent(extractedUrl);
-        return decodedUrl;
+    if (link.includes("/https/")) {
+        const match = link.match(/\/https\/(.+)\.png/);
+        if (match) {
+            const extractedUrl = "https://" + match[1];
+            return decodeURIComponent(extractedUrl);
+        } else {
+            console.error("Invalid URL format for external URL");
+            return link;
+        }
     } else {
-        console.error("Invalid URL format");
+        return link;
     }
 }
 
