@@ -64,10 +64,12 @@ async function create() {
             stdown.appendChild(p);
         }
         if (data.return == "presence") {
-            const stpresence = document.querySelector(".stpresence");
-            const i = document.createElement("img");
-            i.src = await fixlink(data.image);
-            stpresence.appendChild(i);
+            if (data.image != null) {
+                const stpresence = document.querySelector(".stpresence");
+                const i = document.createElement("img");
+                i.src = await fixlink(data.image);
+                stpresence.appendChild(i);
+            }
             const stdown = document.querySelector(".stdown");
             const p = document.createElement("p");
             if (data.type == "Listening to") {
