@@ -88,6 +88,12 @@ async function create() {
                 stdown.appendChild(i);
                 p.textContent = data.type +" "+ data.name;
             }
+            if (data.type == "Watching") {
+                const i = document.createElement("i");
+                i.className = "fa-solid fa-film";
+                stdown.appendChild(i);
+                p.textContent = data.type +" "+ data.name;
+            }
             stdown.appendChild(p);
         }
     }
