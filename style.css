@@ -305,6 +305,7 @@ border-radius: 10px;
   justify-content: center;
   align-items: center;
   margin: 10px;
+  max-width: 50px;
 }
 
 .dstat .stcard .stleft img {
