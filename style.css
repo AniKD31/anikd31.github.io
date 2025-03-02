@@ -276,3 +276,111 @@ border-radius: 10px;
 @keyframes ass {
   to {background-position: 200% 0}
 }
+
+
+.dstat {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dstat .stcard {
+  height: 100%;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 0 0 15px 15px;
+  background-color: #202024;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.dstat .stcard .stleft {
+  width: 15%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.dstat .stcard .stleft img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.dstat .stcard .stmiddle {
+  width: 0.5%;
+  height: 30%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.dstat .stcard .stright {
+  width: 84.5%;
+  height: 90%;
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 10px;
+}
+.ststatus {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.stup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50%;
+  margin-left: 10px;
+}
+.stup h1 {
+  font-size: 100%;
+}
+
+
+.stdown {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 50%;
+  width: 90%;
+}
+
+.stdown p {
+  margin-left: 10px;
+  font-size: 100%;
+  font-weight: 500;
+}
+
+.stdown i {
+  margin-left: 10px;
+  margin-top: 4.5px;
+  font-size: 70%;
+}
+
+.stpresence {
+  width: 20%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50px;
+}
+
+.stpresence img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20%;
+}
