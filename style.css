@@ -333,6 +333,7 @@ border-radius: 10px;
   flex-direction: row;
   margin-left: 10px;
   min-width: 0;
+  overflow: hidden;
 }
 .ststatus {
   display: flex;
