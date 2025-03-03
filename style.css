@@ -321,6 +321,7 @@ border-radius: 10px;
   height: 30%;
   background-color: white;
   border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .dstat .stcard .stright {
@@ -331,6 +332,7 @@ border-radius: 10px;
   align-items: center;
   flex-direction: row;
   margin-left: 10px;
+  min-width: 0;
 }
 .ststatus {
   display: flex;
