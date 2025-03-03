@@ -27,6 +27,9 @@ async function fetchPresence() {
 async function create() {
     const data = await fetchPresence();
     const stleft = document.querySelector(".stleft");
+    const stdown = document.querySelector(".stdown");
+    const mar = document.createElement("div");
+    mar.className = "marquee-text";
     
     const img = document.createElement("img");
     img.src = data.avatar;
@@ -42,37 +45,32 @@ async function create() {
     stleft.appendChild(img);   
 
     if (data.status == "Offline") {
-        const stdown = document.querySelector(".marquee-text");
         const p = document.createElement("p");
         p.className = "marquee"
         p.textContent = "Offline";
         const stpresence = document.querySelector(".stpresence");
         stpresence.style.display = "none";
-        stdown.appendChild(p);
-
+        mar.appendChild(p);
+        stdown.appendChild(mar)
     }
     else {
-        const dow = document.querySelector(".stdown");
-        const mar = document.createElement("div")
-        mar.className = "marquee-text";
-        dow.appendChild(mar);
         if (data.return == "None") {
-            const stdown = document.querySelector(".marquee-text");
             const p = document.createElement("p");
             p.className = "marquee"
             p.textContent = "...";
             const stpresence = document.querySelector(".stpresence");
             stpresence.style.display = "none";
-            stdown.appendChild(p);
+            mar.appendChild(p);
+            stdown.appendChild(mar)
         }
         if (data.return == "status") {
-            const stdown = document.querySelector(".marquee-text");
             const p = document.createElement("p");
             p.className = "marquee"
             p.textContent = data.name;
             const stpresence = document.querySelector(".stpresence");
             stpresence.style.display = "none";
-            stdown.appendChild(p);
+            mar.appendChild(p);
+            stdown.appendChild(mar)
         }
         if (data.return == "presence") {
             if (data.image == null) {
@@ -85,30 +83,25 @@ async function create() {
                 i.src = await fixlink(data.image);
                 stpresence.appendChild(i);
             }
-            const stdown = document.querySelector(".stdown");
             const p = document.createElement("p");
             p.className = "marquee"
             if (data.type == "Listening to") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-music";
                 stdown.appendChild(i);
-                const content = data.type +" "+ data.name;
-                p.textContent = content;
             }
             if (data.type == "Playing") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-gamepad";
                 stdown.appendChild(i);
-                const content = data.type +" "+ data.name;
-                p.textContent = content;
             }
             if (data.type == "Watching") {
                 const i = document.createElement("i");
                 i.className = "fa-solid fa-film";
                 stdown.appendChild(i);
-                const content = data.type +" "+ data.name;
-                p.textContent = content;
             }
+            const content = data.type +" "+ data.name;
+            p.textContent = content;
             mar.appendChild(p);
             stdown.appendChild(mar)
         }
