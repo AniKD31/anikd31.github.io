@@ -15,7 +15,7 @@ async function fixlink(link) {
 
 async function fetchPresence() {
     try {
-        const response = await fetch("https://grabe.infiinitee.me/infinite");
+        const response = await fetch("https://grabe-e701e7ba4aaa.herokuapp.com/infinite");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         return data
