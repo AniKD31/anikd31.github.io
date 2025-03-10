@@ -9,9 +9,9 @@
   </head>
 
   <body style="height: auto;">
-    <div class="loader" style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100vh; width: 100vw; background-color: #101010;"><div class="momentum"></div></div>
+    <div class="loader" style="position: fixed; display: flex; justify-content: center; align-items: center; flex-direction: column; height: 120vh; width: 100vw; background-color: #101010; z-index: 1000; top:0px; left:0px; transition: all ease-in-out 0.7s; "><div class="momentum"></div></div>
 
-    <div class="dstat" style="display: none;">
+    <div class="dstat" style="display: flex;">
       <div class="stcard">
         <div class="stleft"></div>
         <div class="stmiddle"></div>
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="container" style="height: auto; min-height: 100vh; display: none;">
+    <div class="container" style="height: auto; min-height: 100vh; display: flex;">
 
       <div class="img">
         <a><img class="image-thing" src="/assets/thing-modified.png"></a>
@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>
-    <div class="bottom-footer" style="display: none;">
+    <div class="bottom-footer" style="display: flex;">
       <p title="fuck around and find out">
         ©️ Copyright INFINITE31 2024-2025 
       </p>

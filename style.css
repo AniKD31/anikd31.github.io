@@ -388,6 +388,7 @@ border-radius: 10px;
 }
 
 .momentum {
+  margin-bottom: 100px;
   --uib-size: 60px;
   --uib-speed: 1s;
   --uib-color: rgb(221, 255, 242);

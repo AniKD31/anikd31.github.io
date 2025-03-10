@@ -126,9 +126,6 @@
             marqueeText.style.animation = "none";
             marqueeText.style.paddingLeft = "0px"
         }
-        loader.style.display = 'none';
-        dstat.style.display = 'flex';
-        container.style.display = 'flex';
-        bottomfooter.style.display = 'flex';
+        loader.style.opacity = '0%';
     }
     create()
