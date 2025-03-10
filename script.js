@@ -26,9 +26,8 @@
 
     async function create() {
         const loader = document.querySelector(".loader");
-        const dstat = document.querySelector(".dstat");
-        const container = document.querySelector(".container");
-        const bottomfooter = document.querySelector(".bottom-footer");
+        const body = document.querySelector("body");
+        body.style.overflow = "hidden";
 
 
         const data = await fetchPresence();
@@ -126,6 +125,8 @@
             marqueeText.style.animation = "none";
             marqueeText.style.paddingLeft = "0px"
         }
+        body.style.overflowY = "auto";
         loader.style.opacity = '0%';
+        
     }
     create()

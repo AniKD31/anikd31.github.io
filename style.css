@@ -9,26 +9,6 @@ font-family: "Allura";
 src: url("Allura-Regular.ttf")format("woff2"); 
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #37383F;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: white;
-  border: 1px solid white;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: whitesmoke;
-}
 
 * {
   -webkit-tap-highlight-color: transparent;
@@ -399,6 +379,7 @@ border-radius: 10px;
   height: var(--uib-size);
   width: var(--uib-size);
   animation: rotate01561 var(--uib-speed) linear infinite;
+  top: -20px;
  }
  
  .momentum::before,
